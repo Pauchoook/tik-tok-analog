@@ -1,6 +1,21 @@
-import '@/styles/globals.css'
-import type { AppProps } from 'next/app'
+import { GoogleOAuthProvider } from "@react-oauth/google";
+import "@/styles/globals.css";
+import type { AppProps } from "next/app";
+import { useEffect, useState } from "react";
+import MainLayout from "@/components/MainLayout";
 
 export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  const [isSSR, setIsSSR] = useState<boolean>(true);
+
+  useEffect(() => {
+    setIsSSR(false);
+  }, []);
+
+  if (isSSR) return null;
+
+  return (
+    <MainLayout>
+      <Component {...pageProps} />
+    </MainLayout>
+  );
 }

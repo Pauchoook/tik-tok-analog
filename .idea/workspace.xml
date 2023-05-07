@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d6212a77-027e-4202-a6e5-1bfbfb64fb3e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/VideoCard.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/VideoCardHeader.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Navbar/helpers/createOrGetUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Navbar/store/userStore.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/UploadVideo/components/UploadVideo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/UploadVideo/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Videos/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Videos/ui/Videos.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/modules/Videos/ui/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/api/auth.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pages/upload.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/utils/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/api/hello.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/Home.module.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/styles/globals.css" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2P2izTuJ2XoM6aW8K9ebrkrEY0a" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;F:\\Pauchok\\tik-tok\\sanity\\node_modules\\prettier&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;F:\\Pauchok\\tik-tok\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Pauchok\tik-tok\src\modules\Navbar" />
+      <recent name="F:\Pauchok\tik-tok\src\components" />
+    </key>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d6212a77-027e-4202-a6e5-1bfbfb64fb3e" name="Changes" comment="" />
+      <created>1682661844816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1682661844816</updated>
+      <workItem from="1682661847042" duration="653000" />
+      <workItem from="1682690740169" duration="6038000" />
+      <workItem from="1682699236580" duration="634000" />
+      <workItem from="1682710348747" duration="7007000" />
+      <workItem from="1682856540005" duration="1354000" />
+      <workItem from="1682971146495" duration="5302000" />
+      <workItem from="1683146280380" duration="2794000" />
+      <workItem from="1683210027739" duration="588000" />
+      <workItem from="1683216162642" duration="1506000" />
+      <workItem from="1683217764792" duration="3416000" />
+      <workItem from="1683222132964" duration="738000" />
+      <workItem from="1683227373079" duration="1904000" />
+      <workItem from="1683229430561" duration="1744000" />
+      <workItem from="1683231759286" duration="4098000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>
