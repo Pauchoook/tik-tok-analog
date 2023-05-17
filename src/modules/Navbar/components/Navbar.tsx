@@ -34,13 +34,12 @@ export const Navbar = () => {
               </button>
             </Link>
             <div className="md:w-16 md:h-16 w-10 h-10">
-              <Link href={`user/${user._id}`}>
+              <Link href={`user/${user._id}`} className="relative block w-full h-full">
                 <Image
                   src={user.image}
                   alt="profile photo"
-                  width={62}
-                  height={62}
-                  className="rounded-full w-16 h-16 object-cover"
+                  fill
+                  className="rounded-full"
                 />
               </Link>
             </div>

@@ -38,14 +38,14 @@ export const UploadVideo = () => {
         topic: category,
       };
 
-      await axios.post("http://localhost:3000/api/post", document);
+      await axios.post(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`, document);
       router.push("/");
     }
   };
 
   return (
-    <div className="flex w-full h-full mb-10 pt-10 lg:pt-20 justify-center">
-      <div className="bg-white rounded-lg flex items-center gap-6 flex-wrap">
+    <div className="flex w-full h-full py-10 justify-center">
+      <div className="bg-white rounded-lg flex items-center justify-center gap-6 flex-wrap">
         <div>
           <div>
             <h1 className="text-2xl font-bold text-center">Upload video</h1>

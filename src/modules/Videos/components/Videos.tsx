@@ -9,7 +9,7 @@ interface VideosProps {
 
 export const Videos: FC<VideosProps> = ({ videos }) => {
   return (
-    <div className="flex flex-col gap-10 videos h-full">
+    <div className="flex flex-col gap-10 videos h-full py-20">
       {videos ? (
         videos.map((video) => <VideoCard key={video._id} video={video} />)
       ) : (

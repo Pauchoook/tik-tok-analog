@@ -1,1 +1,1 @@
-export { Videos } from "./ui";
+export { Videos } from "./components";

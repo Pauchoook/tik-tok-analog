@@ -1,3 +1,4 @@
+import MainLayout from "@/components/MainLayout";
 import { UploadVideo } from "@/modules/UploadVideo";
 import Head from "next/head";
 import React from "react";
@@ -12,7 +13,9 @@ const Upload = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <UploadVideo />
+        <MainLayout>
+          <UploadVideo />
+        </MainLayout>
       </main>
     </>
   );

@@ -13,9 +13,9 @@ interface VideoCardProps {
 }
 
 const VideoCard: NextPage<VideoCardProps> = ({ video }) => {
-  const [isHover, setIsHover] = useState<boolean>(false);
-  const [isPlaying, setIsPlaying] = useState<boolean>(false);
-  const [isMuted, setIsMuted] = useState<boolean>(false);
+  const [isHover, setIsHover] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const [isMuted, setIsMuted] = useState(false);
   const ref = useRef<HTMLVideoElement | null>(null);
 
   const onVideoPres = () => {
@@ -31,7 +31,7 @@ const VideoCard: NextPage<VideoCardProps> = ({ video }) => {
   return (
     <div className="flex flex-col border-b-2 border-gray-200 pb-6">
       <VideoCardHeader
-        id={video._id}
+        id={video.postedBy._id}
         image={video.postedBy.image}
         username={video.postedBy.username}
       />
@@ -39,13 +39,13 @@ const VideoCard: NextPage<VideoCardProps> = ({ video }) => {
         <div
           onMouseEnter={() => setIsHover(true)}
           onMouseLeave={() => setIsHover(false)}
-          className="rounded-3xl"
+          className="rounded-3xl pr-4 lg:pr-0"
         >
-          <Link href={`/detail/${video._id}`}>
+          <Link href={`/detail/${video._id}`} className="block">
             <video
               ref={ref}
               loop
-              className="lg:w-[700px] h-[300px] md:h-[400px] lg:h-[530px] w-[200px] rounded-2xl bg-gray-100"
+              className="lg:w-[700px] h-[300px] md:h-[400px] lg:h-[530px] w-full object-contain rounded-2xl bg-gray-100"
               src={video.video.asset.url}
             />
           </Link>

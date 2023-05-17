@@ -13,17 +13,16 @@ const VideoCardHeader: FC<VideoCardHeaderProps> = ({ id, image, username }) => {
   return (
     <div className="flex gap-3 p-2 cursor-pointer font-semibold rounded">
       <div className="md:w-16 md:h-16 w-10 h-10">
-        <Link href={`user/${id}`}>
+        <Link href={`user/${id}`} className="relative block w-full h-full">
           <Image
             src={image}
             alt="profile photo"
-            width={62}
-            height={62}
-            className="rounded-full w-16 h-16 object-cover"
+            fill
+            className="rounded-full object-cover"
           />
         </Link>
       </div>
-      <Link href="/">
+      <Link href={`user/${id}`}>
         <div className="flex items-center gap-2">
           <p className="flex items-center gap-2 md:text-md font-bold text-primary">
             {username}

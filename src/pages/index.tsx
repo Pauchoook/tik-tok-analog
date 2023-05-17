@@ -3,6 +3,7 @@ import Head from "next/head";
 import axios from "axios";
 import { IVideo } from "@/utils/types";
 import { Videos } from "@/modules/Videos";
+import MainLayout from "@/components/MainLayout";
 
 interface HomeProps {
   videos: IVideo[];
@@ -18,14 +19,16 @@ const Home: FC<HomeProps> = ({ videos }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <Videos videos={videos} />
+        <MainLayout>
+          <Videos videos={videos} />
+        </MainLayout>
       </main>
     </>
   );
 };
 
 export const getServerSideProps = async () => {
-  const { data } = await axios.get(`http://localhost:3000/api/post`);
+  const { data } = await axios.get<IVideo[]>(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`);
 
   return {
     props: {

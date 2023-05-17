@@ -1,15 +1,17 @@
 import MainLayout from "@/components/MainLayout";
-import { VideoDetail } from "@/modules/VideoDetail";
-import { IParams, IVideo } from "@/utils/types";
+import { Profile } from "@/modules/Profile";
+import { IParams, IUser, IVideo } from "@/utils/types";
 import axios from "axios";
 import Head from "next/head";
 import { FC } from "react";
 
-interface DetailProps {
-  video: IVideo;
+interface UserProps {
+  user: IUser;
+  userVideos: IVideo[];
+  userLikedVideos: IVideo[];
 }
 
-const Detail: FC<DetailProps> = ({ video }) => {
+const User: FC<UserProps> = ({ user, userVideos, userLikedVideos }) => {
   return (
     <>
       <Head>
@@ -19,17 +21,19 @@ const Detail: FC<DetailProps> = ({ video }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <VideoDetail video={video} />
+        <MainLayout>
+          <Profile user={user} myVideos={userVideos} likedVideos={userLikedVideos} />
+        </MainLayout>
       </main>
     </>
   );
 };
 
 export const getServerSideProps = async ({ params: { id } }: IParams) => {
-  const { data } = await axios.get<IVideo>(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post/${id}`);
+  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/user/${id}`);
   return {
-    props: { video: data },
+    props: { ...data },
   };
 };
 
-export default Detail;
+export default User;

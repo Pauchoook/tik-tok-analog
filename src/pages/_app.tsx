@@ -14,8 +14,6 @@ export default function App({ Component, pageProps }: AppProps) {
   if (isSSR) return null;
 
   return (
-    <MainLayout>
-      <Component {...pageProps} />
-    </MainLayout>
+    <Component {...pageProps} />
   );
 }

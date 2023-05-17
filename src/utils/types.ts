@@ -18,17 +18,17 @@ export interface IVideo {
 }
 
 export interface ILike {
-  postedBy: {
-    _id: string;
-    username: string;
-    image: string;
-  };
+  _key: string;
+  _ref: string;
 }
 
 export interface IComment {
   comment: string;
   _key: string;
   postedBy: {
+    _id: string;
+    username: string;
+    image: string;
     _ref: string;
   };
 }
@@ -38,4 +38,10 @@ export interface IUser {
   _type: string;
   username: string;
   image: string;
+}
+
+export interface IParams {
+  params: {
+    id: string;
+  }
 }
