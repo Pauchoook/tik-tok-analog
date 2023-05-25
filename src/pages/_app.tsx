@@ -1,11 +1,11 @@
 import { GoogleOAuthProvider } from "@react-oauth/google";
 import "@/styles/globals.css";
-import type { AppProps } from "next/app";
 import { useEffect, useState } from "react";
-import MainLayout from "@/components/MainLayout";
+import { AppPropsWithLayout } from "../utils/types";
 
-export default function App({ Component, pageProps }: AppProps) {
+export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const [isSSR, setIsSSR] = useState<boolean>(true);
+  const getLayout = Component.getLayout ?? ((page) => page);
 
   useEffect(() => {
     setIsSSR(false);
@@ -14,6 +14,10 @@ export default function App({ Component, pageProps }: AppProps) {
   if (isSSR) return null;
 
   return (
-    <Component {...pageProps} />
+    <GoogleOAuthProvider
+      clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID + ""}
+    >
+      {getLayout(<Component {...pageProps} />)}
+    </GoogleOAuthProvider>
   );
 }

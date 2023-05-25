@@ -1,15 +1,15 @@
 import MainLayout from "@/components/MainLayout";
 import { VideoDetail } from "@/modules/VideoDetail";
-import { IParams, IVideo } from "@/utils/types";
+import { IParams, IVideo, NextPageWithLayout } from "@/utils/types";
 import axios from "axios";
 import Head from "next/head";
-import { FC } from "react";
+import { ReactElement } from "react";
 
 interface DetailProps {
   video: IVideo;
 }
 
-const Detail: FC<DetailProps> = ({ video }) => {
+const Detail: NextPageWithLayout<DetailProps> = ({ video }) => {
   return (
     <>
       <Head>

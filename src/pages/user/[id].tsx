@@ -1,9 +1,9 @@
 import MainLayout from "@/components/MainLayout";
 import { Profile } from "@/modules/Profile";
-import { IParams, IUser, IVideo } from "@/utils/types";
+import { IParams, IUser, IVideo, NextPageWithLayout } from "@/utils/types";
 import axios from "axios";
 import Head from "next/head";
-import { FC } from "react";
+import { ReactElement } from "react";
 
 interface UserProps {
   user: IUser;
@@ -11,7 +11,11 @@ interface UserProps {
   userLikedVideos: IVideo[];
 }
 
-const User: FC<UserProps> = ({ user, userVideos, userLikedVideos }) => {
+const User: NextPageWithLayout<UserProps> = ({
+  user,
+  userVideos,
+  userLikedVideos,
+}) => {
   return (
     <>
       <Head>
@@ -21,16 +25,24 @@ const User: FC<UserProps> = ({ user, userVideos, userLikedVideos }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MainLayout>
-          <Profile user={user} myVideos={userVideos} likedVideos={userLikedVideos} />
-        </MainLayout>
+        <Profile
+          user={user}
+          myVideos={userVideos}
+          likedVideos={userLikedVideos}
+        />
       </main>
     </>
   );
 };
 
+User.getLayout = function (page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
+};
+
 export const getServerSideProps = async ({ params: { id } }: IParams) => {
-  const { data } = await axios.get(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/user/${id}`);
+  const { data } = await axios.get(
+    `${process.env.NEXT_PUBLIC_CLIENT_URL}/api/user/${id}`
+  );
   return {
     props: { ...data },
   };

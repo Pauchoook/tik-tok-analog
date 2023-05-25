@@ -1,3 +1,7 @@
+import { NextPage } from "next";
+import type { AppProps } from "next/app";
+import { ReactElement, ReactNode } from "react";
+
 export interface IVideo {
   _id: string;
   userId: string;
@@ -43,5 +47,13 @@ export interface IUser {
 export interface IParams {
   params: {
     id: string;
-  }
+  };
 }
+
+export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+export type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};

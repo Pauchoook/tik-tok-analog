@@ -1,7 +1,7 @@
-import React, { FC } from "react";
+import React, { FC, ReactElement } from "react";
 import Head from "next/head";
 import axios from "axios";
-import { IVideo } from "@/utils/types";
+import { IVideo, NextPageWithLayout } from "@/utils/types";
 import { Videos } from "@/modules/Videos";
 import MainLayout from "@/components/MainLayout";
 
@@ -9,7 +9,7 @@ interface HomeProps {
   videos: IVideo[];
 }
 
-const Home: FC<HomeProps> = ({ videos }) => {
+const Home: NextPageWithLayout<HomeProps> = ({ videos }) => {
   return (
     <>
       <Head>
@@ -19,16 +19,20 @@ const Home: FC<HomeProps> = ({ videos }) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MainLayout>
-          <Videos videos={videos} />
-        </MainLayout>
+        <Videos videos={videos} />
       </main>
     </>
   );
 };
 
+Home.getLayout = function (page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
+};
+
 export const getServerSideProps = async () => {
-  const { data } = await axios.get<IVideo[]>(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`);
+  const { data } = await axios.get<IVideo[]>(
+    `${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`
+  );
 
   return {
     props: {

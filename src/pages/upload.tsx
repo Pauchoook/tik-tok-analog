@@ -1,9 +1,10 @@
 import MainLayout from "@/components/MainLayout";
 import { UploadVideo } from "@/modules/UploadVideo";
+import { NextPageWithLayout } from "@/utils/types";
 import Head from "next/head";
-import React from "react";
+import { ReactElement } from "react";
 
-const Upload = () => {
+const Upload: NextPageWithLayout = () => {
   return (
     <>
       <Head>
@@ -13,12 +14,14 @@ const Upload = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <MainLayout>
-          <UploadVideo />
-        </MainLayout>
+        <UploadVideo />
       </main>
     </>
   );
+};
+
+Upload.getLayout = function (page: ReactElement) {
+  return <MainLayout>{page}</MainLayout>;
 };
 
 export default Upload;
