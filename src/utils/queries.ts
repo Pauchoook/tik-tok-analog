@@ -74,7 +74,7 @@ export const searchPostsQuery = (searchTerm: string | string[]) => {
       userId,
     postedBy->{
       _id,
-      userName,
+      username,
       image
     },
 likes,
@@ -83,7 +83,7 @@ likes,
       _key,
       postedBy->{
       _id,
-      userName,
+      username,
       image
     },
     }
@@ -180,7 +180,7 @@ export const topicPostsQuery = (topic: string | string[]) => {
       userId,
     postedBy->{
       _id,
-      userName,
+      username,
       image
     },
  likes,
@@ -190,7 +190,7 @@ export const topicPostsQuery = (topic: string | string[]) => {
       _key,
       postedBy->{
       _id,
-      userName,
+      username,
       image
     },
     }

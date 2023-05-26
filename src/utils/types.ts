@@ -46,8 +46,15 @@ export interface IUser {
 
 export interface IParams {
   params: {
-    id: string;
+    id?: string;
+    searchTerm?: string;
   };
+}
+
+export interface IQuery {
+  query: {
+    topic: string;
+  }
 }
 
 export type NextPageWithLayout<P = {}, IP = P> = NextPage<P, IP> & {

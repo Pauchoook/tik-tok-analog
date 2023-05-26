@@ -1,7 +1,7 @@
-import React, { FC, ReactElement } from "react";
+import React, { ReactElement } from "react";
 import Head from "next/head";
 import axios from "axios";
-import { IVideo, NextPageWithLayout } from "@/utils/types";
+import { IParams, IQuery, IVideo, NextPageWithLayout } from "@/utils/types";
 import { Videos } from "@/modules/Videos";
 import MainLayout from "@/components/MainLayout";
 
@@ -29,14 +29,20 @@ Home.getLayout = function (page: ReactElement) {
   return <MainLayout>{page}</MainLayout>;
 };
 
-export const getServerSideProps = async () => {
-  const { data } = await axios.get<IVideo[]>(
-    `${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`
-  );
+export const getServerSideProps = async ({ query: { topic } }: IQuery) => {
+  let videos: IVideo[] = [];
+
+  if (topic) {
+    const { data } = await axios.get<IVideo[]>(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/discover/${topic}`);
+    videos = data;
+  } else {
+    const { data } = await axios.get<IVideo[]>(`${process.env.NEXT_PUBLIC_CLIENT_URL}/api/post`);
+    videos = data;
+  }
 
   return {
     props: {
-      videos: data,
+      videos,
     },
   };
 };
